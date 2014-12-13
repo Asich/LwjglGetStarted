@@ -1,1 +1,6 @@
 .idea/*
+LwjglGetStarted.iml
+core/core.iml
+desktop/desktop.iml
+html/html.iml
+GameProjects.iml
