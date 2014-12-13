@@ -26,20 +26,18 @@ public class Play extends GameState {
         world = new World(new Vector2(0, -9.8f), true);
         b2dr = new Box2DDebugRenderer();
 
+        //floor
         BodyDef bodyDef = new BodyDef();
         bodyDef.position.set(160 / PPM, 120 / PPM);
         bodyDef.type = BodyDef.BodyType.StaticBody;
         Body body = world.createBody(bodyDef);
-
         PolygonShape shape = new PolygonShape();
         shape.setAsBox(50 / PPM, 5 / PPM);
-
         FixtureDef fdef = new FixtureDef();
         fdef.shape = shape;
         body.createFixture(fdef);
 
         //box
-
         bodyDef.position.set(140 / PPM, 170 / PPM);
         bodyDef.type = BodyDef.BodyType.DynamicBody;
         Body circleBody = world.createBody(bodyDef);
@@ -51,6 +49,7 @@ public class Play extends GameState {
         f.restitution = 0.6f;
         circleBody.createFixture(f);
 
+        //cam
         b2dCam = new OrthographicCamera();
         b2dCam.setToOrtho(false, MyGame.V_WIDTH / PPM, MyGame.V_HEIGHT / PPM);
 
